@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C&C Home Page</title>
+    <!----------------- CSS Stylesheet ---------------------->
+    <link rel="stylesheet" href="styles.css " />
+    <!-------------------- GOOGLE Fonts --------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Junge&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poly&display=swap"
+      rel="stylesheet"
+    />
+    <!----------------- Font awesome ------------------------>
+    <script
+      src="https://kit.fontawesome.com/f0fe225d96.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="content-container">
+      <!--------------------------- HEADER SECTION ----------------------->
+      <header id="header">
+        <!--------------------- NAVIGATION BAR ------------------>
+        <nav id="nav-bar">
+          <!--------- C&C Logo -------------->
+          <a href="index.html" class="logo">
+            <img id="header-img"
+            src=https://github.com/AOA19/C-C-Product-Page/blob/main/C%20&%20C%201.2.png?raw=true
+            alt="Cacao and Chocolate Logo" />
+          </a>
+          <!--------- Navigation Bar Links -------------->
+          <div class="horizontal-line">
+            <ul class="main-nav">
+              <li><a class="nav-link" href="#about">About</a></li>
+              <li><a class="nav-link" href="#products">Products</a></li>
+              <li>
+                <a class="nav-link" href="#how-its-made">How It's Made</a>
+              </li>
+              <li><a class="nav-link" href="#footer-section">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!------------------------ WELCOME SECTION --------------------->
+      <section id="welcome">
+        <!------- Background Image on homepage----- -->
+        <div class="welcome-img-div">
+          <img
+            src="./Images/Chocolate Truffles 2.jpg "
+            alt="Chocolate truffles"
+            class="welcome-img"
+          />
+        </div>
+        <div class="title-div">
+          <p class="title">CACAO & CHOCOLATE</p>
+        </div>
+        <a href="#products"><button class="title-btn">Our Products</button></a>
+      </section>
+
+      <!------------------------ ABOUT SECTION --------------------->
+      <section id="about">
+        <h2>About</h2>
+        <div class="about-div">
+          <p class="about-info">
+            Cacao and Chocolate got its start making custom made chocolates in
+            Brooklyn, NY in 2021. Handcrafted chocolates made everyday in store,
+            from high quality cacao beans sourced from select cultivators around
+            the country. Choose from our wide assortment of chocolate treats
+            from dark chocolate, chocolate truffles, organic, and gluten-free
+            for every occasion like holidays, birthdays, weddings, and more!
+            Shop in store or check out our online store with easy delivery.
+          </p>
+
+          <img
+            src=".//Images/Cacao.jpg"
+            alt="Person holding a handfull of Cacao beans"
+            class="cacao-img"
+          />
+        </div>
+      </section>
+
+      <!------------------------ PRODUCTS SECTION --------------------->
+      <section id="products">
+        <h2>Our Products</h2>
+        <div class="products-container">
+          <!-- Product Listing One -->
+          <div class="outer-div">
+            <div class="products-listing">
+              <img
+                src=".//Images/Chocolate Truffles 1.jpg"
+                alt="Chocolate Truffles"
+                class="product-img"
+              />
+              <p class="product-name">Truffles | $25</p>
+              <button class="product-btn">Purchase</button>
+            </div>
+          </div>
+          <!-- Product Listing Two -->
+          <div class="outer-div">
+            <div class="products-listing">
+              <img
+                src=".//Images/Chocolate Bar 1.jpg"
+                alt=" Milk Chocolate Bars"
+                class="product-img"
+              />
+              <p class="product-name">
+                Chocolate Bars | $15
+                <br />
+                <span>(Choose from milk, dark, and white)</span>
+              </p>
+              <button class="product-btn">Purchase</button>
+            </div>
+          </div>
+          <!-- Product Listing Three -->
+          <div class="outer-div">
+            <div class="products-listing">
+              <img
+                src=".//Images/Fudge.jpg"
+                alt=" Chocolate Fudge"
+                class="product-img"
+              />
+              <p class="product-name">Fudge | $15</p>
+              <button class="product-btn">Purchase</button>
+            </div>
+          </div>
+          <!-- Product Listing Four -->
+          <div class="outer-div">
+            <div class="products-listing">
+              <img
+                src=".//Images/Boxed Chocolates.jpg"
+                alt=" Box Assorted Chocolates"
+                class="product-img"
+              />
+              <p class="product-name">Assorted Chocolates | $30</p>
+              <button class="product-btn">Purchase</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!---------------------- HOW IT'S MADE SECTION---------------->
+      <section id="how-its-made">
+        <h2>How It's Made</h2>
+        <div class="video-container">
+          <!------ How it's made demo video ----->
+          <div class="youtube-div">
+            <iframe
+              id="video"
+              src="https://www.youtube.com/embed/P_JuQCiKWUc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <!----- How it's made bullet details ----->
+          <div class="video-details">
+            <p>Discover how we make our gourment chocolates.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!------------------------ FOOTER SECTION--------------------->
+    <footer id="footer-section">
+      <!--------- Subscribe Div -------->
+      <div class="footer-section-div">
+        <div class="subscribe-div">
+          <h3>Subscribe</h3>
+          <form action="https://www.freecodecamp.com/email-submit" id="form">
+            <label>Sign up to stay-up-date with news and new products.</label>
+            <br />
+            <div class="subscribe-email-div">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Email"
+                required
+              />
+              <input
+                type="submit"
+                id="submit"
+                value="Sign Up"
+                class="email-submit-btn"
+              />
+            </div>
+          </form>
+        </div>
+        <!--------- Contact Div -------->
+        <div class="contact-div">
+          <h3>Contact</h3>
+          <div class="contact-details-div">
+            <p class="contact-details address">
+              123 Chocolate Ave <br />
+              Brooklyn, NY 11223
+            </p>
+            <p class="contact-details phone-num">
+              <i class="fas fa-phone contact-icons"></i> 123-456-7890
+            </p>
+            <p class="contact-details cacao-email">
+              <i class="fas fa-envelope contact-icons"></i> cacao_chocolate@email.com
+            </p>
+            <p class="contact-details hours">
+              Hours: <br />
+              M-F: 8:00 am - 9:00 pm <br />
+              S-Su: 8:00 am - 7:00 pm
+            </p>
+          </div>
+        </div>
+        <!--------- Social media Div-------->
+        <div class="socials-div">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-2x fa-instagram fa-socials"></i></a>
+            <a href="#"><i class="fab fa-2x fa-twitter fa-socials"></i></a>
+            <a href="#"><i class="fab fa-2x fa-facebook fa-socials"></i></a>
+          </div>
+        </div>
+      </div>
+      <!--------- Credit Div -------->
+      <p class="footer-credit">
+        Copyright &#169; 2021 Cacao Chocolate, Designed by A0A19. All Rights
+        Reserved
+      </p>
+    </footer>
+  </body>
+
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>
+
+<!-- https://codepen.io/gelsodesigns/full/wXyGMy/ 
+
+
+font-family: 'Zen Loop', cursive;-->
