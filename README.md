@@ -6,7 +6,7 @@ This is my design to the [FreeCodeCamp Product Landing Page Project](https://www
 ## Table of contents
 
 - [Overview](#overview)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -17,8 +17,9 @@ This is my design to the [FreeCodeCamp Product Landing Page Project](https://www
 
 ### Screenshot
 
-![](/Screenshots/C&C Product Page (Desktop).png)
-![](Screenshots/C&C Product Page (Mobile).png)
+![](Screenshots/C&C-Product-Page-Desktop.png)
+![](Screenshots/C&C-Product-Page-Mobile.png)
+
 
 ### Links
 
