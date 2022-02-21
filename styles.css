@@ -1,351 +1,547 @@
-/* Color Scheme: #74511C,#B68030, #CDB38A, #3D2B10, #FFFAEC
-#280000,#51A3A3,#171219, #07484B, #354E48,
-For buttons: #BE9E6D, #e2c8a2 (btn hover color)
-*/
 
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
+/* Font Awesome License: https://fontawesome.com/license */
+
+:root {
+  /* Fonts */
+  --ff-primary: Lora, serif;
+  --ff-secondary: Junge, serif;
+  --ff-accent: Playfair Display, serif;
+  --ff-button: Poly, serif;
+  /* Colors */
+  --primary-white-color: #fffaec;
+  --primary-color--dark: #74511c;
+  --primary-button-color: #be9e6d;
+  --primary-button-highlight: #e2c8a2;
+  --link-hover-color: #b1823b;
 }
 
-/* This is the sytling for the headers for each section */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--primary-white-color);
+}
+
+/* Remove vertical scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+}
+/* This is styling for the welcome section header */
+h1 {
+  color: var(--primary-white-color);
+  font-family: var(--ff-accent);
+  font-size: 2.813rem;
+  font-weight: 500;
+  padding-bottom: 80px;
+}
+/* This is the styling for the headers for each section */
 h2 {
-  color: #74511c;
-  font-family: "Poly", serif;
+  color: var(--primary-color--dark);
+  font-family: var(--ff-primary);
   font-size: 30px;
-  text-transform: uppercase;
+  font-weight: 700;
+  margin: 60px 0 40px 0;
   text-align: center;
-  margin-top: 80px;
+  text-transform: uppercase;
 }
 
 /* This is the styling for the three headers in the footer section */
 h3 {
-  color: #fffaec;
+  color: var(--primary-white-color);
+  font-family: var(--ff-primary);
   font-size: 22px;
-  font-family: "Lora", serif;
+  font-weight: 500;
+  padding: 20px 0;
   text-align: center;
-  margin-bottom: 25px;
-}
-
-/* This is styling for the words in parentheses in the product section */
-span {
-  font-size: 12px;
+  text-transform: uppercase;
 }
 
 /* This is styling for the label for the email form box found in footer */
-label {
-  color: #fffaec;
-  font-size: 16px;
-  font-family: "Junge", serif;
+h4 {
+  color: var(--primary-white-color);
+  font-family: var(--ff-secondary);
+  padding-left: 15px;
+  margin: 0 20px;
 }
 
-/*************************Below is styling for the HEADER Section **********************/
+/* Make images responsive */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
 
+/* Styling for the footer horizontal line */
+hr {
+  width: 100%;
+  border: 1px solid var(--primary-white-color);
+}
+
+/************************************************************* Mobile Device Styling *************************************************/
+
+/**************************Below is styling for the HEADER Section ***************************/
 #header {
-  position: fixed;
-  top: 0;
+  background-color: var(--primary-white-color);
   left: 0;
+  position: fixed;
   right: 0;
-  background-color: #fffaec;
-  z-index: 3;
+  top: 0;
+  z-index: 2;
+}
+
+/* Styling for the Logo */
+#header-img {
+  padding-top: 20px;
+}
+
+.logo-div {
+  display: flex;
+  justify-content: center;
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+  background-color: transparent;
+  border: 0;
+  color: var(--primary-color--dark);
+  cursor: pointer;
+  display: block;
+  font-size: 25px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.hamburger:focus {
+  outline: none;
 }
 
 /* Navigation Bar Styling  */
-#nav-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Logo Styling  */
-.logo {
-  margin-top: 30px;
-}
-
-.horizontal-line {
-  border: solid 1px #74511c;
-  border-right-style: none;
-  border-left-style: none;
-  padding: 0 685px;
-  margin-top: 10px;
-  width: 800px;
-  height: 70px;
-}
-.main-nav {
-  list-style: none;
-  display: flex;
-  margin-top: 30px;
-}
-
 .nav-link {
-  color: #74511c;
+  color: var(--primary-color--dark);
+  font-family: var(--ff-primary);
   font-size: 18px;
-  font-family: "Lora", serif;
+  font-weight: 700;
   text-decoration: none;
-  padding: 0 50px 0 60px;
+  text-transform: uppercase;
+  transition: 0.4s ease;
 }
 
 .nav-link:hover {
-  color: #b1823b;
+  color: var(--link-hover-color);
 }
 
-/************************Below is styling for the WELCOME Section **************************/
-
+/**************************Below is styling for the WELCOME Section ***************************/
 #welcome {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 780px;
-  background-color: #354e48;
-  width: 100vw;
+  background-image: url(./Images/Mobile/Truffles-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
 }
-
-.welcome-img-div {
-  position: relative;
-  top: 190px;
-}
-
-.welcome-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .title-div {
-  position: relative;
-  bottom: 300px;
-  z-index: 1;
-}
-
-.title {
-  font-family: "Playfair Display", serif;
-  font-size: 3.9em;
-  color: #fffaec;
+  padding-top: 220px;
+  text-align: center;
 }
 
 .title-btn {
-  color: #fffaec;
-  background-color: #be9e6d;
-  border: solid 1px #be9e6d;
+  color: var(--primary-white-color);
+  background-color: var(--primary-button-color);
+  border: solid 1px var(--primary-button-color);
   border-radius: 10px;
-  font-family: "Lora", serif;
-  padding: 15px 30px;
+  font-family: var(--ff-primary);
   font-size: 22px;
-  position: relative;
-  bottom: 280px;
+  padding: 15px 30px;
+  transition: 0.4s ease;
 }
 
 .title-btn:hover {
-  background-color: #e2c8a2;
-  border: solid 1px #e2c8a2;
   cursor: pointer;
+  background-color: var(--primary-button-highlight);
+  border: solid 1px var(--primary-button-highlight);
 }
 
 /**************************Below is styling for the ABOUT Section ***************************/
 
-.about-div {
+.cacao-img {
+  aspect-ratio: 1 / 1.5;
+  width: 100%;
+  object-fit: contain;
+}
+
+.about-container {
   display: flex;
-  margin-top: 60px;
-  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.about-box {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px 20px 8px;
 }
 
 .about-info {
-  color: #74511c;
-  font-family: "Junge", serif;
-  font-size: 22px;
-  line-height: 1.7;
-  margin: 20px 50px 0 50px;
-  width: 40%;
+  color: var(--primary-color--dark);
+  font-family: var(--ff-secondary);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-.cacao-img {
-  max-width: 100%;
-  height: auto;
-  align-self: start;
-  border-radius: 30px;
+.about-icons {
+  color: var(--primary-color--dark);
+  font-size: 35px;
+  padding-right: 15px;
 }
 
 /******************************Below is styling for the PRODUCTS Section **************************/
-
-.products-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 60px;
+#products {
+  margin-bottom: 60px;
 }
 
-/* This is styling for the colored box around each product image */
-.outer-div {
-  background-color: #cdb38a;
-  height: 420px;
-  padding: 25px;
-  border-radius: 15px;
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 25px;
 }
 
 .product-img {
-  width: 284px;
-  height: 300px;
+  aspect-ratio: 1 / 0.7;
+  width: 100%;
   object-fit: cover;
 }
 
-.product-name {
-  font-family: "Lora", serif;
-  color: #fffaec;
-  font-size: 20px;
+.product-info {
+  background-color: var(--primary-button-highlight);
   text-align: center;
+  padding: 18px 0;
+}
+
+.product-name,
+.product-flavors {
+  font-family: var(--ff-primary);
+  color: var(--primary-color--dark);
+}
+
+.product-name {
+  font-size: 20px;
+}
+.product-flavors {
+  font-size: 12px;
+  padding: 5px 0 18px 0;
+  margin: 0 15px;
 }
 
 .product-btn {
-  display: block;
-  margin: auto;
-  color: #fffaec;
-  background-color: #74511c;
-  border: solid 1px #74511c;
-  border-radius: 10px;
-  font-family: "Lora", serif;
-  padding: 10px 30px;
+  background-color: var(--primary-color--dark);
+  border: solid 1px var(--primary-color--dark);
+  color: var(--primary-white-color);
+  font-family: var(--ff-primary);
   font-size: 15px;
+  padding: 10px 30px;
+  transition: 0.4s ease;
 }
 
 .product-btn:hover {
-  background-color: #be9e6d;
-  border: solid 1px #be9e6d;
+  background-color: var(--primary-button-color);
+  border: solid 1px var(--primary-button-color);
   cursor: pointer;
 }
 
 /************************Below is styling for the How It's Made Section ***********************/
-#video {
-  width: 560px;
-  height: 360px;
+.videoWrapper {
+  height: 0;
+  padding-bottom: 56.25%; /* Equals 16:9 */
+  position: relative;
+  width: 100%;
 }
 
-.youtube-div {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
+.videoWrapper iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
 
-.video-details p {
+.video-details {
+  color: var(--primary-color--dark);
   display: flex;
+  font-family: var(--ff-secondary);
+  font-size: 15px;
   justify-content: center;
   margin-top: 25px;
-  color: #74511c;
-  font-family: "Junge", serif;
-  font-size: 15px;
+  padding-bottom: 25px;
 }
 
 /**************************Below is styling for the Footer Section **************************/
 
-#footer-section {
-  background-color: #74511c;
-  width: 100vw;
-  margin-top: 100px;
-  flex-shrink: 0;
-}
-
-.footer-section-div {
+#footer {
+  background-color: var(--primary-color--dark);
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  flex-direction: column;
+  margin-top: 100px;
+  width: 100vw;
+  align-items: center;
 }
 
-/* Styling for Suscribe form box */
+/* Styling for Subscribe form box */
+#form {
+  width: 75vw;
+}
 
 #email {
-  border: solid 2px #fffaec;
-  border-radius: 200px 0 0 200px;
-  color: #74511c;
+  border: solid 2px var(--primary-white-color);
+  color: var(--primary-color--dark);
   float: left;
-  margin-top: 20px;
+  margin: 30px 0 30px 3px;
   padding: 10px;
-  
 }
 
-.subscribe-div {
-  margin: 0 40px;
+#submit {
+  background-color: var(--primary-button-color);
+  border: solid 1px var(--primary-button-color);
+  color: var(--primary-white-color);
+  font-family: var(--ff-button);
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 9.5px 20px;
+  transition: 0.4s ease;
 }
 
-.subscribe-email-div {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.email-submit-btn {
-  background-color: #be9e6d;
-  border: solid 1px #be9e6d;
-  border-radius: 0 200px 200px 0;
-  color: #fffaec;
-  font-family: "Lora", serif;
-  font-size: 15px;
-  margin-top: 19px;
-  padding: 10px 20px;
-}
-
-.email-submit-btn:hover {
-  background-color: #e2c8a2;
-  border: solid 1px #e2c8a2;
+#submit:hover {
+  background-color: var(--primary-button-highlight);
+  border: solid 1px var(var(--primary-button-highlight));
   cursor: pointer;
 }
 
 ::placeholder {
-  color: #74511c;
+  color: var(--primary-color--dark);
+  font-family: var(--ff-button);
   opacity: 0.6;
-  padding-left: 10px;
+  padding-left: 7px;
 }
 
-/* Styling for the contact section in footer */
-.contact-div {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Styling for the Contact section in footer */
+.contact-container {
   margin: 0 auto;
-}
-
-.contact-details-div {
   text-align: center;
 }
 
 .contact-details {
-  color: #fffaec;
-  font-family: "Junge", serif;
+  color: var(--primary-white-color);
+  font-family: var(--ff-secondary);
+  padding: 10px 0;
 }
 
 .contact-icons {
   margin-right: 5px;
 }
 
-/* Styling for the social media section in footer */
-.socials-div {
-  margin: 0 auto;
-}
-
-.social-icons {
-  text-align: center;
+/* Styling for the Social Media section in footer */
+.socials-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 18px 0;
 }
 
 .fa-socials {
-  color: #fffaec;
+  color: var(--primary-button-color);
+  font-size: 25px;
   padding: 0 15px;
+  transition: 0.4s ease;
 }
 
 .fa-socials:hover {
-  color: #e2c8a2;
+  color: var(--primary-button-highlight);
 }
 
 /* Styling for the footer credit */
-
 .footer-credit {
-  color: #fffaec;
-  font-family: "Junge", serif;
-  font-size: 12px;
+  color: var(--primary-white-color);
+  background-color: var(--primary-color--dark);
+  font-family: var(--ff-secondary);
+  font-size: 14px;
+  padding: 22px 15% 2% 15%;
   text-align: center;
-  margin: 0 auto;
-  padding: 20px 0;
-  border: solid 2px #fffaec;
-  border-left-style: none;
-  border-right-style: none;
-  border-bottom-style: none;
 }
 
-/****************** Styling for Mobile Devices (1920px) *****************/
+.footer-credit a {
+  color: var(--primary-white-color);
+  text-decoration: none;
+  transition: 0.4s ease;
+}
+
+.footer-credit a:hover {
+  color: var(--primary-button-highlight);
+}
+
+/*** Navigation Bar styling for Mobile ***/
+@media screen and (max-width: 767px) {
+  .nav-menu {
+    background-color: var(--primary-white-color);
+    position: fixed;
+    text-align: center;
+    top: 6.5rem;
+    transition: 0.3s;
+    left: -100%;
+    width: 100%;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 30px 0;
+  }
+}
+
+/************ Tablet Styling ************/
+@media screen and (max-width: 1059px) and (min-width: 767px) {
+  #form {
+    width: 500px;
+  }
+
+  .about-box {
+    padding-right: 20px;
+  }
+
+  .about-info {
+    font-size: 16px;
+  }
+
+  .fa-socials {
+    padding: 0 8px;
+  }
+}
+
+/************************************************************* Desktop Styling *************************************************/
+@media screen and (min-width: 768px) {
+  /* Navigation Bar Styling */
+  #nav-bar {
+    align-items: center;
+    border: solid 1px var(--primary-color--dark);
+    border-left-style: none;
+    border-right-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 0 50px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  /* Welcome Section Styling */
+  #welcome {
+    background-image: url(./Images/Desktop/Truffles-1.jpg);
+    height: 90vh;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+  .title-div {
+    padding-top: 300px;
+  }
+
+  /* About Section Styling */
+  .about-container {
+    flex-direction: row-reverse;
+  }
+
+  .cacao-img {
+    aspect-ratio: 1/1;
+    width: 80%;
+  }
+
+  .about-info-container {
+    padding-top: 50px;
+    width: 50%;
+  }
+
+  .about-box {
+    padding-right: 120px;
+  }
+
+  .about-info {
+    font-size: 18px;
+  }
+
+  /* Product Section Styling */
+  #products {
+    margin-bottom: 150px;
+  }
+
+  .product-grid {
+    gap: 2% 2%;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 10%;
+    width: 80%;
+  }
+
+  .product-flavors {
+    font-size: 14px;
+  }
+
+  /* How its Made Section Styling */
+  #how-its-made {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .video-details {
+    font-size: 20px;
+  }
+
+  /* Footer Section Styling */
+  #form {
+    max-width: 310px;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  .subscribe-container {
+    margin-left: 20px;
+    margin-right: 90px;
+  }
+
+  .email-add {
+    width: 240px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .socials-container {
+    margin-top: 0;
+  }
+
+  .fa-socials {
+    font-size: 30px;
+  }
+}
