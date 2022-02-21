@@ -11,6 +11,7 @@ This is my design to the [FreeCodeCamp Product Landing Page Project](https://www
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
+- [Attributes](#attributes)
 
 
 ## Overview
@@ -41,3 +42,9 @@ This is my design to the [FreeCodeCamp Product Landing Page Project](https://www
 ## Author
 
 - Github: [@AOA19](https://github.com/AOA19)
+
+
+## Attributes
+- Icons: [Font Awesome Icons](https://fontawesome.com/icons)
+    - [Font Awesome License](https://fontawesome.com/license)
+- Photos: [Unsplash](https://unsplash.com/)
