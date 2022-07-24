@@ -6,15 +6,22 @@ This is my design to the [FreeCodeCamp Product Landing Page Project](https://www
 ## Table of contents
 
 - [Overview](#overview)
+  - [The Project](#the-project)
   - [Screenshots](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Useful Resources](#useful-resources)
 - [Author](#author)
 - [Attributes](#attributes)
 
 
 ## Overview
+
+### The Project
+
+  In this project I created a product landing page that markets gourmet chocolates. You're able to learn a little about the company, see how their chocolates are made, and browse their collection of chocolates, and add to the shopping cart for purchase. 
+
 
 ### Screenshot
 
@@ -38,6 +45,9 @@ This is my design to the [FreeCodeCamp Product Landing Page Project](https://www
 - Mobile-first workflow
 - Vanilla JavaScript
 
+### Useful Resources
+
+- [Shopping Cart Tutorial For Beginners](https://youtu.be/YeFzkC2awTM) - This video helped me create the shopping cart functionality for this site. The video was able to break down each line of code an explain what that specific line of code was doing in a very simple way. 
 
 ## Author
 
