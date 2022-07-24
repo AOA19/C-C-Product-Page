@@ -10,6 +10,7 @@
   --primary-button-color: #be9e6d;
   --primary-button-highlight: #e2c8a2;
   --link-hover-color: #b1823b;
+  --cart-overlay-color: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -56,25 +57,17 @@ h3 {
   text-transform: uppercase;
 }
 
-/* This is styling for the label for the email form box found in footer */
-h4 {
-  color: var(--primary-white-color);
-  font-family: var(--ff-secondary);
-  padding-left: 15px;
-  margin: 0 20px;
-}
-
 /* Make images responsive */
 img,
 picture {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 /* Styling for the footer horizontal line */
 hr {
-  width: 100%;
   border: 1px solid var(--primary-white-color);
+  width: 100%;
 }
 
 /************************************************************* Mobile Device Styling *************************************************/
@@ -86,7 +79,7 @@ hr {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* Styling for the Logo */
@@ -100,20 +93,29 @@ hr {
 }
 
 /* Hamburger Menu Styling */
-.hamburger {
+#hamburger {
   background-color: transparent;
+  background-image: url(./Images/bars-solid.svg);
+  background-repeat: no-repeat;
   border: 0;
-  color: var(--primary-color--dark);
-  cursor: pointer;
-  display: block;
-  font-size: 25px;
+  height: 2rem;
+  left: 1rem;
   position: absolute;
-  right: 1rem;
   top: 1rem;
+  width: 1.5rem;
 }
 
-.hamburger:focus {
-  outline: none;
+#hamburger[aria-expanded="true"] {
+  background-image: url(./Images/times-solid.svg);
+}
+
+#hamburger span,
+.cart span {
+  display: block;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  top: 0.2rem;
 }
 
 /* Navigation Bar Styling  */
@@ -124,11 +126,141 @@ hr {
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  transition: 0.4s ease;
+  transition: 0.3s ease-in;
 }
 
 .nav-link:hover {
   color: var(--link-hover-color);
+}
+
+/**************************Below is styling for the Shopping Cart ***************************/
+#cart {
+  background-color: transparent;
+  background-image: url(./Images/cart-shopping-solid.svg);
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+  height: 2rem;
+  right: 1.2rem;
+  position: absolute;
+  top: 1.5rem;
+  width: 1.3rem;
+  z-index: 2;
+}
+
+#cart[aria-expanded="true"] {
+  background-image: url(./Images/times-solid.svg);
+}
+
+.cart-overlay {
+  background-color: var(--cart-overlay-color);
+  height: 100vh;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 100vw;
+}
+
+.overlay-open {
+  right: 0;
+}
+
+.cart-container {
+  background-color: var(--primary-button-highlight);
+  height: 100vh;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  transition: 0.4s ease-out;
+  width: 75%;
+}
+
+.cart-container[data-visible="true"] {
+  right: 0;
+}
+
+.cart-header {
+  font-size: 25px;
+  margin: 0;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  text-transform: capitalize;
+}
+
+.cart-row {
+  align-items: center;
+  column-gap: 0.75rem;
+  display: grid;
+  grid-template-columns: 32% 40% 15%;
+  padding: 0 15px;
+}
+
+.cart-img {
+  height: 100px;
+  object-fit: contain;
+  width: 100px;
+}
+
+.cart-details {
+  display: grid;
+  row-gap: 0.25rem;
+}
+
+.item-title,
+.item-price,
+.total-title,
+.total-price {
+  color: var(--primary-color--dark);
+  font-family: var(--ff-primary);
+  font-weight: 500;
+}
+
+.item-title {
+  width: 120px;
+}
+
+.total-title {
+  font-weight: 700;
+  padding-right: 3px;
+}
+
+input[type="number"] {
+  border: 1px solid var(--primary-color--dark);
+  color: var(--primary-color--dark);
+  outline-color: var(--link-hover-color);
+  text-align: center;
+  width: 2rem;
+}
+
+/* Styling for remove item button */
+.remove-btn {
+  background-color: transparent;
+  border: 0;
+  color: var(--primary-color--dark);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.cart-total {
+  border-top: 1px solid var(--primary-color--dark);
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-right: 12px;
+  padding-top: 8px;
+}
+
+.purchase-btn {
+  background-color: var(--primary-color--dark);
+  border: solid 1px var(--primary-color--dark);
+  color: var(--primary-white-color);
+  display: flex;
+  font-family: var(--ff-primary);
+  font-size: 16px;
+  margin: 30px auto 0 auto;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  transition: 0.2s ease-in;
 }
 
 /**************************Below is styling for the WELCOME Section ***************************/
@@ -152,7 +284,7 @@ hr {
   font-family: var(--ff-primary);
   font-size: 22px;
   padding: 15px 30px;
-  transition: 0.4s ease;
+  transition: 0.2s ease-in;
 }
 
 .title-btn:hover {
@@ -210,21 +342,30 @@ hr {
   object-fit: cover;
 }
 
-.product-info {
+.product-details {
   background-color: var(--primary-button-highlight);
   text-align: center;
   padding: 18px 0;
 }
 
+.product-info {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
 .product-name,
-.product-flavors {
+.product-flavors,
+.product-price {
   font-family: var(--ff-primary);
   color: var(--primary-color--dark);
 }
 
-.product-name {
-  font-size: 20px;
+.product-price {
+  font-weight: 700;
+  padding-left: 12px;
 }
+
 .product-flavors {
   font-size: 12px;
   padding: 5px 0 18px 0;
@@ -238,10 +379,11 @@ hr {
   font-family: var(--ff-primary);
   font-size: 15px;
   padding: 10px 30px;
-  transition: 0.4s ease;
+  transition: 0.2s ease-in;
 }
 
-.product-btn:hover {
+.product-btn:hover,
+.purchase-btn:hover {
   background-color: var(--primary-button-color);
   border: solid 1px var(--primary-button-color);
   cursor: pointer;
@@ -260,8 +402,8 @@ hr {
   left: 0;
   position: absolute;
   top: 0;
-  z-index: 1;
   width: 100%;
+  /* z-index: 1; */
 }
 
 .video-details {
@@ -277,12 +419,12 @@ hr {
 /**************************Below is styling for the Footer Section **************************/
 
 #footer {
+  align-items: center;
   background-color: var(--primary-color--dark);
   display: flex;
   flex-direction: column;
   margin-top: 100px;
   width: 100vw;
-  align-items: center;
 }
 
 /* Styling for Subscribe form box */
@@ -296,6 +438,17 @@ hr {
   float: left;
   margin: 30px 0 30px 3px;
   padding: 10px;
+}
+
+label {
+  color: var(--primary-white-color);
+  font-family: var(--ff-secondary);
+}
+
+label,
+input {
+  display: flex;
+  flex-direction: column;
 }
 
 #submit {
@@ -321,11 +474,6 @@ hr {
   font-family: var(--ff-button);
   opacity: 0.6;
   padding-left: 7px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
 /* Styling for the Contact section in footer */
@@ -356,7 +504,7 @@ hr {
   color: var(--primary-button-color);
   font-size: 25px;
   padding: 0 15px;
-  transition: 0.4s ease;
+  transition: 0.2s ease;
 }
 
 .fa-socials:hover {
@@ -365,8 +513,8 @@ hr {
 
 /* Styling for the footer credit */
 .footer-credit {
-  color: var(--primary-white-color);
   background-color: var(--primary-color--dark);
+  color: var(--primary-white-color);
   font-family: var(--ff-secondary);
   font-size: 14px;
   padding: 22px 15% 2% 15%;
@@ -387,15 +535,15 @@ hr {
 @media screen and (max-width: 820px) {
   .nav-menu {
     background-color: var(--primary-white-color);
+    left: -100%;
     position: fixed;
     text-align: center;
     top: 6.5rem;
-    transition: 0.3s;
-    left: -100%;
+    transition: 0.5s;
     width: 100%;
   }
 
-  .nav-menu.active {
+  .nav-menu[data-visible="true"] {
     left: 0;
   }
 
@@ -405,15 +553,41 @@ hr {
 }
 
 /************************************************************* Tablet Styling *************************************************/
-@media screen and (min-width: 800px) and (max-width: 820px) {
+@media screen and (min-width: 768px) and (max-width: 820px) {
   .title-div {
     padding-top: 330px;
   }
 
+  #cart {
+    right: 2rem;
+    top: 2rem;
+    width: 1.6rem;
+  }
+
+  .cart-container {
+    width: 50%;
+  }
+
+  .cart-row {
+    grid-template-columns: 30% 32% 38%;
+  }
+
+  .total-title,
+  .total-price,
+  .item-title,
+  .item-price,
+  .remove-btn {
+    font-size: 18px;
+  }
+
+  .item-title {
+    width: 130px;
+  }
+
   .cacao-img {
     aspect-ratio: 1 / 1;
-    width: 80%;
     margin: auto;
+    width: 70%;
   }
 
   h1 {
@@ -425,8 +599,8 @@ hr {
   }
 
   .about-info-container {
-    width: 80%;
     margin: auto;
+    width: 80%;
   }
 
   .about-info {
@@ -437,12 +611,23 @@ hr {
     justify-items: center;
   }
 
+  .product-card {
+    width: 70%;
+  }
+
   .video-details {
     font-size: 18px;
   }
 
   .fa-socials {
     padding: 0 8px;
+  }
+
+  #footer {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   #form {
@@ -452,6 +637,10 @@ hr {
   #email {
     margin-left: 100px;
   }
+
+  label {
+    text-align: center;
+  }
 }
 
 /************************************************************* Desktop Styling *************************************************/
@@ -459,9 +648,9 @@ hr {
   /* Navigation Bar Styling */
   #nav-bar {
     align-items: center;
-    border: solid 1px var(--primary-color--dark);
     border-left-style: none;
     border-right-style: none;
+    border: solid 1px var(--primary-color--dark);
     display: flex;
     flex-direction: column;
     padding: 20px 0;
@@ -473,12 +662,53 @@ hr {
   }
 
   .nav-link {
-    font-size: 16px;
     padding: 0 50px;
   }
 
-  .hamburger {
+  #hamburger {
     display: none;
+  }
+
+  /* Shopping cart styling */
+  #cart {
+    right: 2rem;
+    top: 2rem;
+    width: 1.6rem;
+  }
+
+  .cart-container {
+    width: 35%;
+  }
+
+  .cart-row {
+    grid-template-columns: 25% 38% 40%;
+  }
+
+  .item-title {
+    width: 150px;
+  }
+
+  .item-title,
+  .item-price {
+    font-size: 20px;
+  }
+
+  input[type="number"] {
+    font-size: 16px;
+  }
+
+  .remove-btn {
+    font-size: 18px;
+  }
+
+  .total-title,
+  .total-price {
+    font-size: 20px;
+  }
+
+  .purchase-btn {
+    font-size: 18px;
+    padding: 12px 35px;
   }
 
   /* Welcome Section Styling */
@@ -525,8 +755,8 @@ hr {
   .product-grid {
     gap: 2% 2%;
     grid-template-columns: 1fr 1fr;
-    margin-left: 10%;
-    width: 80%;
+    margin-left: 15%;
+    width: 70%;
   }
 
   .product-flavors {
@@ -544,6 +774,12 @@ hr {
   }
 
   /* Footer Section Styling */
+  #footer {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
   #form {
     max-width: 310px;
   }
@@ -554,15 +790,15 @@ hr {
 
   .subscribe-container {
     margin-left: 20px;
-    margin-right: 90px;
+    /* margin-right: 90px; */
   }
 
   .email-add {
     width: 240px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+  .contact-container {
+    margin: 0;
   }
 
   .socials-container {
